@@ -90,7 +90,7 @@
     </div>
   </div> -->
 
-  <div class="video section mb-5 mt-5">
+  <!-- <div class="video section mb-5 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
@@ -114,7 +114,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <div class="container">
   <div class="col"> 

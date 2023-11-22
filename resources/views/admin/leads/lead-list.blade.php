@@ -4,10 +4,15 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <!-- <div class="d-flex "> -->
+                <div class="mb-2">
                     <h2 class="card-title">Leads List</h2>
                     <a href="{{route('leads.add')}}" class="btn btn-primary text-light"><i class="mdi mdi-account-plus "></i></a>
-                <!-- </div> -->
+                </div>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
               
                 <div class="table-responsive pt-3">
                 <table class="table table-bordered">
@@ -15,8 +20,8 @@
                         <tr class="bg-light">
                             <th class="card-description">#</th>
                             <th class="card-description">Name</th>
-                            <th class="card-description">Email</th>
-                            <th class="card-description">Phone</th>
+                            <th class="card-description">Email Address</th>
+                            <th class="card-description">Contact number</th>
                             <th class="card-description">Address</th>  
                             <th class="card-description text-center">Action</th>
                         </tr>

@@ -11,7 +11,7 @@
   </div>
 
   <div class="contact-content">
-    <div class="container">
+  <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div id="map">
@@ -34,12 +34,12 @@
         </div>
         <div class="col-lg-5 mt-5">
         <form id="contact-form">
-        <div class="section-heading text-center">
+          <div class="section-heading text-center align-items-center">
             <h3>Get in touch with us!</h4>
-            <p>Ask and connect</p>
+            <p>For questions and clarification, don't hesitate to contact us</p>
           </div>
-          <a href="{{ route('contact-us')}}" class="btn btn-warning w-100 h-50">Contact us</a>
-          </form>
+          <a href="{{ route('contact-us')}}" class="btn btn-warning text-white w-100 h-50">Direct to Contact form</a>
+        </form>
         </div>
       </div>
     </div>

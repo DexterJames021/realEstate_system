@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\property;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Requests\reservation\addReservation;
 
 class ReservationController extends Controller
 {
@@ -42,7 +43,7 @@ class ReservationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(addReservation $request)
     {
         $data =  $request->all();
 
@@ -59,7 +60,7 @@ class ReservationController extends Controller
         $data['poi_image'] = '/storage/'.$path;
       
 
-       Reservation::create($data);
+        Reservation::create($data);
         return view('front.reservation.success')->with('reservationData',$data);
     }
 

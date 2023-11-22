@@ -3,8 +3,8 @@
 
   <div class="single-property section">
     <div class="container">
-    <div class="row">
-      <div class="col-lg-4 offset-lg-4">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
             <h2 class="m-2">{{$PropertyData->residencialName}}</h2> <br>
             <h6>| Properties Details</h6>
@@ -23,7 +23,7 @@
               </div>
 
               <div class="col-6">
-                <span class="category bg-light text-warning">₱</span>{{$PropertyData->totalPrize}}</span>
+                <span class="category bg-light text-warning">₱</span>{{number_format($PropertyData->totalPrize)}}</span>
               </div>
               </div>
 
@@ -92,7 +92,6 @@
                           <li> - <span>Children's Pool</span></li>
                           <li> - <span>Open Lawn</span></li>
                           <li> - <span>Playroom </span></li>
-
                         </ul>
 
                       </div>
@@ -137,10 +136,10 @@
               
                         </ul>
                       <div class="icon-button">
-                        <a href="#"><i class="fa fa-home"></i> Schedule a visit</a>
+                        <a href="{{ route('appointment')}}"><i class="fa fa-home"></i> Book an Appointment</a>
                       </div>
                       <div class="icon-button">
-                        <a href="{{ route('reservation.form',$PropertyData->id)}}"><i class="fa fa-calendar"></i> Reservation form</a>
+                        <a href="{{ route('reservation.form',$PropertyData->id)}}"><i class="fa fa-home"></i> Reservation form</a>
                       </div>
                     </div>
                   </div>

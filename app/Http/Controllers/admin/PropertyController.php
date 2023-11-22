@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use App\Models\property;
 use Illuminate\Http\Request;
 use Illuminate\Http\Storage;
 use App\Http\Controllers\Controller;
-use App\Models\property;
+use App\Http\Requests\property\addProperty;
+use App\Http\Requests\property\updateProperty;
 
 class PropertyController extends Controller
 {
@@ -29,17 +30,20 @@ class PropertyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(addProperty $request)
     {
         $data = $request->all();
         
         // uploading image
-        $fileName = time().$request->file('coverImage')->getClientOriginalName();
-        $path = $request->file('coverImage')->storeAs('realestate_images', $fileName,'public');
-        $data['coverImage'] = '/storage/'.$path;
+        if ($request->hasFile('coverImage')) {
+            $fileName = time().$request->file('coverImage')->getClientOriginalName();
+            $path = $request->file('coverImage')->storeAs('realestate_images', $fileName,'public');
+            $data['coverImage'] = '/storage/'.$path;
+        }
+        
 
         property::create($data);
-        return redirect('admin/property-list');
+        return redirect('admin/property-list')->with('message','Successfully Added');
     }
 
     /**
@@ -63,18 +67,18 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(updateProperty $request, string $id)
     {
         $data = property::find($id);
         $input = $request->all();
 
         if ($request->hasFile('coverImage')) {
-                $imagePath = request()->file('coverImage')->move('realestate_images','public');
+                $imagePath = request()->file('coverImage')->store('realestate_images','public');
                 $input['coverImage'] = $imagePath;
         }
 
-        $data->update($input);
-        return redirect('admin/property-list')->with('flash_message', 'property Updated!'); 
+        $data->Update($input);
+        return redirect('admin/property-list')->with('message', 'Property Updated!'); 
 
     }
 
@@ -84,6 +88,6 @@ class PropertyController extends Controller
     public function destroy(string $id)
     {
         property::destroy($id);
-        return redirect('admin/property-list')->with('flash_message', 'property deleted!');
+        return redirect('admin/property-list')->with('message', 'Property deleted!');
     }
 }

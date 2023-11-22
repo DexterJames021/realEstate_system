@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Appointments;
+use App\Http\Requests\appointment\appointmentForm;
 
 class AppointmentController extends Controller
 {
@@ -27,11 +28,11 @@ class AppointmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(appointmentForm $request)
     {
         $input = $request->all();
         Appointments::create($input);
-        return redirect()->route('appointment')->with("success","Successull");
+        return redirect()->route('appointment')->with("success","Successful");
     }
 
     /**

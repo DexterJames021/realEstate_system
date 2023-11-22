@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('middleName');
             $table->string('lastName');
             $table->string('email');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('validId_image');
             $table->string('tax_image');
             $table->string('poi_image');

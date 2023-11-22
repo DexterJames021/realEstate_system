@@ -14,14 +14,15 @@
                                     <th class="card-description">First name</th>
                                     <th class="card-description">Middle name</th>
                                     <th class="card-description">Last name</th>
-                                    <th class="card-description">Email</th>
-                                    <th class="card-description">Phone</th>  
+                                    <th class="card-description">Email Address</th>
+                                    <th class="card-description">Contact number</th>  
                                     <!-- <th class="card-description">validId_image</th>
                                     <th class="card-description">tax_image</th>
                                     <th class="card-description">poi_image</th> -->
-                                    <th class="card-description">monthlyIncome</th>
-                                    <th class="card-description">annualPayment</th>
-                                    <th class="card-description">paymentTerm</th>
+                                    <th class="card-description">Monthly Income</th>
+                                    <th class="card-description">Annual Payment</th>
+                                    <th class="card-description">Payment Term</th>
+                                    <th class="card-description">Amorti</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,9 +37,10 @@
                                         <!-- <td>{{$reservationCall->validId_image}}</td>
                                         <td>{{$reservationCall->tax_image}}</td>
                                         <td>{{$reservationCall->poi_image}}</td> -->
-                                        <td>{{$reservationCall->monthlyIncome}}</td>
+                                        <td>{{number_format($reservationCall->monthlyIncome)}}</td>
                                         <td>{{$reservationCall->annualPayment}}</td>
-                                        <td>{{$reservationCall->paymentTerm}}</td>
+                                        <td>{{$reservationCall->paymentTerm}} years</td>
+                                        <td>value </td>
                                     </tr>
                                 @endforeach    
                             </tbody>

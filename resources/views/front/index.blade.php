@@ -20,7 +20,7 @@
                 within Sierra Valley, a large master planned mixed-used development ready to unfold a thriving, 
                 independent community of its own. This estate will feature lifestyle destinations, bussiness offices,
                 and a residential district, giving you the perfect ingredients for a perfect oasis set to cater to young 
-                professionals, start-up families and invetors. 
+                professionals, start-up families and inventors. 
                 </p>
               </div>
             </div>

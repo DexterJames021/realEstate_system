@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\leads;
 use Illuminate\Http\Request;
+use App\Http\Requests\leads\addLeads;
+use App\Http\Requests\leads\updateLeads;
 
 class LeadsController extends Controller
 {
@@ -28,11 +30,11 @@ class LeadsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(addLeads $request)
     {
         $input = $request->all();
         leads::create($input);
-        return redirect('admin/lead-list');
+        return redirect('admin/lead-list')->with('message','Successfully Stored');
     }
 
     /**
@@ -56,12 +58,12 @@ class LeadsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(updateLeads $request, string $id)
     {
         $data = leads::find($id);
         $input = $request->all();
         $data->update($input);
-        return redirect('admin/lead-list')->with('flash_message', 'leads Updated!'); 
+        return redirect('admin/lead-list')->with('message', 'Leads Updated!'); 
     }
 
     /**
@@ -70,6 +72,6 @@ class LeadsController extends Controller
     public function destroy(string $id)
     {
         leads::destroy($id);
-        return redirect('admin/lead-list')->with('flash_message', 'leads deleted!'); 
+        return redirect('admin/lead-list')->with('message','Leads Deleted!'); 
     }
 }

@@ -13,8 +13,8 @@
                                     <th class="card-description">#</th>
                                     <th class="card-description">First name</th>
                                     <th class="card-description">Last name</th>
-                                    <th class="card-description">Email</th>
-                                    <th class="card-description">Phone</th>  
+                                    <th class="card-description">Email Address</th>
+                                    <th class="card-description">Contact number</th>  
                                     <th class="card-description">Date</th>
                                     <th class="card-description">Time Slot</th>
                                     <th class="card-description">Property</th>

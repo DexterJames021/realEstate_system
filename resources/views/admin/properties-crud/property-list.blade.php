@@ -6,16 +6,20 @@
                 <div class="card-body">
                     <h2 class="card-title">Property-list</h2>
                     <a href="{{ route('property.add')}}" class="btn btn-primary text-light my-2">ADD NEW PROPERTY</a>
+                @if(session()->has('message'))
+                <div class="alert alert-success">{{session()->get('message')}}</div>
+                @endif
+
                     <div class="table-responsive pt-3">
                     <table class="table table-bordered">
                         <thead class="bg-light">
                             <tr> 
                                 <th class="card-description ">#</th>
                                 <th class="card-description">Cover Image</th>
-                                <th class="card-description">Residencial</th>
+                                <th class="card-description">Residencial name</th>
                                 <th class="card-description">Unit Type</th>
                                 <th class="card-description">Category</th>
-                                <th class="card-description">Total Prize</th>  
+                                <th class="card-description">Price</th>  
                                 <th class="card-description text-center">Action</th>  
                             </tr>
                         </thead>
@@ -29,7 +33,7 @@
                                     <td>{{$PropertyCall->residencialName}}</td>
                                     <td>{{$PropertyCall->unitType}}</td>
                                     <td>{{$PropertyCall->category}}</td>
-                                    <td>{{$PropertyCall->totalPrize}}</td>
+                                    <td>{{number_format($PropertyCall->totalPrize)}}</td>
                                     <td>
                                         <div class="btn p-0">
                                             <a href="{{ route('property.show',$PropertyCall->id)}}" class="" >

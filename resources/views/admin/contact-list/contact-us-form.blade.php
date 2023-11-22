@@ -11,10 +11,10 @@
                         <thead class="bg-light">
                             <tr>
                                 <th class="card-description">#</th>
-                                <th class="card-description">first</th>
-                                <th class="card-description">last</th>
-                                <th class="card-description">email</th>
-                                <th class="card-description">phone</th>  
+                                <th class="card-description">First name</th>
+                                <th class="card-description">Last name</th>
+                                <th class="card-description">Email Address</th>
+                                <th class="card-description">Contact Number</th>  
                             </tr>
                         </thead>
                         <tbody>

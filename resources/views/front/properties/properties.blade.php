@@ -23,7 +23,7 @@
             <img src="{{ asset($PropertyCall->coverImage) }}" width= '200px' height='200px' class="img img-responsive" />
               </a>
               <span class="category" id="category">{{$PropertyCall->category}}</span>
-              <h6 class="text-warning"><span class="text-dark">PHP </span>{{$PropertyCall->totalPrize}}</h6>
+              <h6 class="text-warning"><span class="text-dark">PHP </span>{{number_format($PropertyCall->totalPrize)}}</h6>
               <h4>
                 <a href="#deatails">{{$PropertyCall->unitType}}
                   <span class="text-success">|</span>
