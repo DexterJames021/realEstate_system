@@ -19,11 +19,17 @@
           <div class="main-content align-items-center">
               <div class="row">
               <div class="col-6">
-                <span class="category">{{$PropertyData->category}}</span>
+              @if(($PropertyData->category) == 'Sold')
+              <span class="category text-light bg-danger" id="category" >{{$PropertyData->category}}</span>
+              @elseif(($PropertyData->category) == 'Reserved')
+              <span class="category text-light" id="category" style="background-color:#6f42c1 ;">{{$PropertyData->category}}</span>
+              @else(($PropertyData->category) == 'Available')
+              <span class="category text-light bg-warning" id="category" >{{$PropertyData->category}}</span>
+              @endif
               </div>
 
               <div class="col-6">
-                <span class="category bg-light text-warning">₱</span>{{number_format($PropertyData->totalPrize)}}</span>
+                <span class="category bg-light fw-bold text-dark">PHP </span>{{number_format($PropertyData->totalPrize)}}</span>
               </div>
               </div>
 

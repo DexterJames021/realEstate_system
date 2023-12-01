@@ -10,14 +10,14 @@
     <title>RLC Residences | @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('\../assets/front/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/front/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('\../assets/front/assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{ asset('\../assets/front/assets/css/templatemo-villa-agency.css')}}">
-    <link rel="stylesheet" href="{{ asset('\../assets/front/assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{ asset('\../assets/front/assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/front/assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/front/assets/css/templatemo-villa-agency.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/front/assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/front/assets/css/animate.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
     <!-- datepicker -->
@@ -85,15 +85,12 @@
   <!-- Scripts -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('assets/front/assets/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{ asset('assets/front/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{ asset('assets/front/assets/assets/js/isotope.min.js')}}"></script>
-  <script src="{{ asset('assets/front/assets/assets/js/owl-carousel.js')}}"></script>
-  <script src="{{ asset('assets/front/assets/assets/js/counter.js')}}"></script>
-  <script src="{{ asset('assets/front/assets/assets/js/custom.js')}}"></script>
-    <!-- datepicker -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
+  <script src="{{ asset('../assets/front/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ asset('../assets/front/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+  <!-- <script src="{{ asset('../assets/front/assets/assets/js/isotope.min.js')}}"></script> -->
+  <script src="{{ asset('../assets/front/assets/js/owl-carousel.js')}}"></script>
+  <script src="{{ asset('../assets/front/assets/js/custom.js')}}"></script>
+  
   </body>
 </html>
 

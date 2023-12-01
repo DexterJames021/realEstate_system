@@ -6,7 +6,6 @@
             <div class="card-body">
                 <h2 class="card-title">Contacts</h2>
                     <div class="table-responsive">
-                        
                     <table class="table table-bordered">
                         <thead class="bg-light">
                             <tr>
@@ -14,7 +13,8 @@
                                 <th class="card-description">First name</th>
                                 <th class="card-description">Last name</th>
                                 <th class="card-description">Email Address</th>
-                                <th class="card-description">Contact Number</th>  
+                                <th class="card-description">Message</th>  
+                                <th class="card-description">Mail back</th>  
                             </tr>
                         </thead>
                         <tbody>
@@ -24,7 +24,12 @@
                                     <td>{{$ContactData->firstName}}</td>
                                     <td>{{$ContactData->lastName}}</td>
                                     <td>{{$ContactData->email}}</td>
-                                    <td>{{$ContactData->mobileNo}}</td>
+                                    <td>{{($ContactData->message)}}</td>
+                                    <td>
+                                        <a href="">  
+                                            <button class="btn btn-success text-light">Message</button>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach    
                         </tbody>

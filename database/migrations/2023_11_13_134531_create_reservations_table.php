@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('property_id')->nullable()->constrained();
             $table->string('firstName');
             $table->string('middleName');
             $table->string('lastName');
@@ -21,8 +22,8 @@ return new class extends Migration
             $table->string('validId_image');
             $table->string('tax_image');
             $table->string('poi_image');
-            $table->integer('monthlyIncome');
-            $table->string('annualPayment');
+            // $table->integer('monthlyIncome');
+            // $table->string('annualPayment');
             $table->string('paymentTerm');
             $table->timestamps();
         });

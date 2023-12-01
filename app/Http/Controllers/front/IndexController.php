@@ -19,7 +19,7 @@ class IndexController extends Controller
         return view("front.appointment.form");
     }
     public function properties(){
-        $propertyData = property::get();
+        $propertyData = property::orderBy('id','DESC')->get();
         return view("front.properties.properties")->with("propertyData", $propertyData);
     }
     public function details(string $id){

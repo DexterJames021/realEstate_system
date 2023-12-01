@@ -4,43 +4,45 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                        <h2 class="card-title">Reservation</h2>
+                        <h2 class="card-title">Reservation-list / Buyer</h2>
                         <div class="table-responsive pt-3">
                         
                         <table class="table table-bordered">
                             <thead class="bg-light">
                                 <tr>
                                     <th class="card-description">#</th>
-                                    <th class="card-description">First name</th>
-                                    <th class="card-description">Middle name</th>
-                                    <th class="card-description">Last name</th>
-                                    <th class="card-description">Email Address</th>
-                                    <th class="card-description">Contact number</th>  
-                                    <!-- <th class="card-description">validId_image</th>
-                                    <th class="card-description">tax_image</th>
-                                    <th class="card-description">poi_image</th> -->
-                                    <th class="card-description">Monthly Income</th>
-                                    <th class="card-description">Annual Payment</th>
+                                    <th class="card-description">Buyer name</th>
+                                    <th class="card-description">Email</th>
+                                    <th class="card-description">Contact number</th>
+                                    <th class="card-description">Valid ID</th>
+                                    <th class="card-description">Tin id</th>
+                                    <th class="card-description">POI</th>
                                     <th class="card-description">Payment Term</th>
-                                    <th class="card-description">Amorti</th>
+                                    <th class="card-description">Export PDF</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($reservationData as $reservationCall)
                                     <tr>
                                         <td class="text-muted">{{$loop->iteration }}</td>
-                                        <td>{{$reservationCall->firstName}}</td>
-                                        <td>{{$reservationCall->middleName}}</td>
-                                        <td>{{$reservationCall->lastName}}</td>
+                                        <td>{{$reservationCall->firstName.' '.$reservationCall->lastName}}</td>
                                         <td>{{$reservationCall->email}}</td>
                                         <td>{{$reservationCall->phone}}</td>
-                                        <!-- <td>{{$reservationCall->validId_image}}</td>
-                                        <td>{{$reservationCall->tax_image}}</td>
-                                        <td>{{$reservationCall->poi_image}}</td> -->
-                                        <td>{{number_format($reservationCall->monthlyIncome)}}</td>
-                                        <td>{{$reservationCall->annualPayment}}</td>
-                                        <td>{{$reservationCall->paymentTerm}} years</td>
-                                        <td>value </td>
+                                        <td>
+                                            <img src="{{ asset($reservationCall->validId_image) }}" width= '100%' height='100%' class="" />
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset($reservationCall->tax_image) }}" width= '100%' height='100%' class="" />
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset($reservationCall->poi_image) }}" width= '100%' height='100%' class="" />
+                                        </td>
+                                            <td>{{$reservationCall->paymentTerm}}</td>
+                                        <td>
+                                            <a href="{{ route('get.pdf',$reservationCall->id)}}" target="_blank">
+                                                <button class="btn btn-success text-light">get PDF</button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach    
                             </tbody>

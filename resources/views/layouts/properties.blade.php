@@ -61,6 +61,7 @@
   <script src="{{ asset('assets/front/assets/js/isotope.min.js')}}"></script>
   <script src="{{ asset('assets/front/assets/js/owl-carousel.js')}}"></script>
   <script src="{{ asset('assets/front/assets/js/custom.js')}}"></script>
+  <script src="{{ asset('assets/front/assets/js/customscript.js')}}"></script>
   
   </body>
 </html>

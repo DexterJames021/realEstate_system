@@ -12,9 +12,13 @@ class property extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'coverImage',
-        'residencialName', // seiraa
+        'propertyName', // seiraa
         'unitType', // 1br 2br
         'category', //sold, reserve
         'totalPrize'// 22m 1 br, 66 2br, studio
     ];
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

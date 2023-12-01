@@ -6,10 +6,22 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item"> 
+            <a class="nav-link" href="{{ route('property')}}">
+              <i class="mdi mdi-flag menu-icon"></i>
+              <span class="menu-title">Properties</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
             <a class="nav-link" href="{{ route('leads')}}">
               <i class="mdi mdi-eye menu-icon"></i>
-              <span class="menu-title">Leads</span>
+              <span class="menu-title">Lead Account</span>
+            </a>
+          </li> -->
+          <li class="nav-item"> 
+            <a class="nav-link" href="{{ route('reservation.list')}}">
+              <i class="mdi mdi-flag menu-icon"></i>
+              <span class="menu-title">Reservation</span>
             </a>
           </li>
           <li class="nav-item">
@@ -24,18 +36,8 @@
               <span class="menu-title">Contacts</span>
             </a>
           </li>
-          <li class="nav-item"> 
-            <a class="nav-link" href="{{ route('property')}}">
-              <i class="mdi mdi-flag menu-icon"></i>
-              <span class="menu-title">Properties</span>
-            </a>
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link" href="{{ route('reservation.list')}}">
-              <i class="mdi mdi-flag menu-icon"></i>
-              <span class="menu-title">Reservation</span>
-            </a>
-          </li>
+
+
 
         </ul>
       </nav>

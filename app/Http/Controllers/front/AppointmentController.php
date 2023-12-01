@@ -32,7 +32,7 @@ class AppointmentController extends Controller
     {
         $input = $request->all();
         Appointments::create($input);
-        return redirect()->route('appointment')->with("success","Successful");
+        return redirect()->route('appointment')->with("success","Message sent. Await our email. Thanks!");
     }
 
     /**

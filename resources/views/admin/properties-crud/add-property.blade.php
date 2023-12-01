@@ -20,10 +20,10 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label card-description" for="residencialName" >Residencial Name: </label>
-                        <input type="text" name="residencialName" value="{{old('residencialName')}}" placeholder="Residencial Name ..." class="form-control">
+                        <label class="form-label card-description" for="propertyName" >Residencial Name: </label>
+                        <input type="text" name="propertyName" value="{{old('propertyName')}}" placeholder="Residencial Name ..." class="form-control">
                         <div class="alert mb-3">
-                            @error('residencialName')
+                            @error('propertyName')
                                 <small><div class="text-danger">{{$message}}</div></small>
                             @enderror    
                         </div>

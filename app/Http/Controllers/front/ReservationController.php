@@ -1,38 +1,53 @@
 <?php
-
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\property;
+use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Requests\reservation\addReservation;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
-    public function makePDF(){
-        $propertyData = property::first();
-        $totalPrize = $propertyData->totalPrize;
-        $PassingData = Reservation::get();
-       
-        
-        $pdf = Pdf::loadView("front.reservation.pdf", compact("PassingData",'totalPrize'));
-        return $pdf->stream('SOP');
+    public function makePDF($id)
+    { 
+        $PassingData = Reservation::find($id)
+        ->join('properties', 'properties.id', '=', 'reservations.id')
+        ->select('reservations.*', 'properties.*')
+        // ->where('reservations.id', $id)
+        ->find($id);
 
+            // dd($PassingData);
+        $pdf = Pdf::loadView("front.reservation.pdf",compact('PassingData'));
+        return $pdf->stream();
     }
+    public function getPDF($id)
+    { 
+        $PassingData = Reservation::find($id)
+        ->join('properties', 'properties.id', '=', 'reservations.id')
+        ->select('reservations.*', 'properties.*')
+        // ->where('reservations.id', $id)
+        ->find($id);
 
+            // dd($PassingData);
+        $pdf = Pdf::loadView("front.reservation.pdf",compact('PassingData'));
+        return $pdf->stream();
+    }
 
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Reservation::get();
-            return view("admin.reservation.reservation-list")->with('reservationData',$data);
+        $reservationData = Reservation::get();
+
+        // dd($reservationData);
+        return view("admin.reservation.reservation-list",compact("reservationData"));
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      */
     public function create()
@@ -59,9 +74,8 @@ class ReservationController extends Controller
         $path = $request->file('poi_image')->storeAs('requirements', $fileName);
         $data['poi_image'] = '/storage/'.$path;
       
-
-        Reservation::create($data);
-        return view('front.reservation.success')->with('reservationData',$data);
+        $reservation = Reservation::create($data);
+        return view('front.reservation.success')->with('reservationData',$reservation);
     }
 
     /**
@@ -69,8 +83,7 @@ class ReservationController extends Controller
      */
     public function show(string $id)
     {
-        
-        $data = property::find($id); 
+        $data = property::find($id);
         return view('front.reservation.form')->with('reservationData',$data);
     }
 

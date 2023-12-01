@@ -16,7 +16,7 @@ class ContactsController extends Controller
     public function store(contactForm $request){
         $input = $request->all();
         Contact::create($input);
-        return redirect()->route('contact-us')->with("success","Successful");
+        return redirect()->route('contact-us')->with("success","Message sent. Await our email. Thanks!");
     }
     public function show(){
         $data = Contact::get();

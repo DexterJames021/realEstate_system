@@ -20,8 +20,10 @@ class Reservation extends Model
         'validId_image',
         'tax_image',
         'poi_image',
-        'monthlyIncome',
-        'annualPayment',
         'paymentTerm'
     ];
+    public function property()
+    {
+        return $this->belongsTo(property::class);
+    }
 }

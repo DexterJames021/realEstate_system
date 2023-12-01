@@ -23,7 +23,7 @@ class addProperty extends FormRequest
     {
         return [
             'coverImage' => 'required|image|mimes:jpg,png,jpeg',
-            'residencialName' => 'required|string',
+            // 'propertyName' => 'null',
             'unitType' => 'required|in:1-Bedroom unit,2-Bedroom unit,3-Bedroom unit,Studio-type unit,Pent-house unit',
             'category' => 'required|in:Sold,Reserved,Available', 
             'totalPrize' => 'required|numeric|digits_between:6,11'

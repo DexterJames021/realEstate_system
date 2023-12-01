@@ -56,7 +56,7 @@
                         @enderror
                         </div>
                        
-                            <button type="submit" class="btn btn-primary text-light">  Confirm  </button>
+                            <button type="submit" class="btn btn-primary text-light">Confirm</button>
                             <a href="{{ route('property')}}" class="btn btn-light">Back</a>
 
                         </fieldset>

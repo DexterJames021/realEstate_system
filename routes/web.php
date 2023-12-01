@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\IndexController;
 use App\Http\Controllers\front\AppointmentController;
@@ -22,22 +21,23 @@ Route::group(["prefix"=> "/"], function () {
     Route::get('contact-us',[ContactsController::class,'index'])->name('contact-us');
     Route::post('contact-us',[ContactsController::class,'store'])->name('contact-us.store');
 
-    Route::get('reservation-done',[ReservationController::class,'index'])->name('reservation');
+    // Route::get('reservation-done',[ReservationController::class,'index'])->name('reservation');
     Route::get('reservation/{id}',[ReservationController::class,'show'])->name('reservation.form');
     Route::post('reservation',[ReservationController::class,'create'])->name('reservation.add');
     Route::post('reservation-store',[ReservationController::class,'store'])->name('reservation.store');
-    Route::get('sop',[ReservationController::class,'makePDF'])->name('make.pdf');
-   
+    Route::get('get-sop/{id}',[ReservationController::class,'getPDF'])->name('get.pdf');
+    Route::get('make-sop/{id}',[ReservationController::class,'makePDF'])->name('make.pdf');
 
 });
 
 // ? ************** auth control ****************************
 Route::controller(AuthController::class)->group(function () {
-    Route::get('register', 'register')->name('register');
-    Route::post('register', 'registerSave')->name('register.save');
-    Route::get('login', 'login')->name('login');
-    Route::post('login', 'loginAction')->name('login.action');
-    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+    Route::get('register','register')->name('register');
+    Route::post('register','registerSave')->name('register.save');
+    Route::get('login','login')->name('login');
+    Route::post('login','loginAction')->name('login.action');
+    Route::get('logout','logout')->middleware('auth')->name('logout');
+
 });
 
 // ? ************** ADMIN ****************************

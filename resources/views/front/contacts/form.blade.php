@@ -44,9 +44,9 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <label for="subject">Contact number:</label>
-                  <input type="text" name="mobileNo" id="mobileNo"  placeholder="+63" required>
-                @error('mobileNo')
+                  <label for="subject">Message:</label>
+                  <textarea type="text" name="message" id="message"  placeholder="Message ..." required></textarea>
+                @error('message')
                   <span class="text-danger"><small>{{$message}}</small></span>
                 @enderror
                 </fieldset>
@@ -54,8 +54,7 @@
               <div class="col-lg-12">
                 <fieldset>
                   <button type="submit" id="form-submit" class="orange-button">Send Message</button>
-                  <small class="text-muted mx-5">Be sure to enter a valid address and
-                     mobile number</small>
+                  <small class="text-muted mx-5">Be sure to enter a Active Email address</small>
                 </fieldset>
               </div>
             </div>

@@ -12,8 +12,6 @@
                 
             </div>
             <a href="{{ route('property')}}" class="btn btn-primary m-5 text-light">Back</a>
-            </div>
 </div>
-
-
+</div>
 @endsection

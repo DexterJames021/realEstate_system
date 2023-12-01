@@ -16,7 +16,7 @@
                             <tr> 
                                 <th class="card-description ">#</th>
                                 <th class="card-description">Cover Image</th>
-                                <th class="card-description">Residencial name</th>
+                                <th class="card-description">Residencial name/Block & lot</th>
                                 <th class="card-description">Unit Type</th>
                                 <th class="card-description">Category</th>
                                 <th class="card-description">Price</th>  
@@ -30,7 +30,7 @@
                                     <td>
                                     <img src="{{ asset($PropertyCall->coverImage) }}" width= '100%' height='100%' class="" />
                                     </td>
-                                    <td>{{$PropertyCall->residencialName}}</td>
+                                    <td>{{$PropertyCall->propertyName}}</td>
                                     <td>{{$PropertyCall->unitType}}</td>
                                     <td>{{$PropertyCall->category}}</td>
                                     <td>{{number_format($PropertyCall->totalPrize)}}</td>

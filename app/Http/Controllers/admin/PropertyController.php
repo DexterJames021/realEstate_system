@@ -41,7 +41,7 @@ class PropertyController extends Controller
             $data['coverImage'] = '/storage/'.$path;
         }
         
-
+// dd($data);
         property::create($data);
         return redirect('admin/property-list')->with('message','Successfully Added');
     }
@@ -73,7 +73,7 @@ class PropertyController extends Controller
         $input = $request->all();
 
         if ($request->hasFile('coverImage')) {
-                $imagePath = request()->file('coverImage')->store('realestate_images','public');
+                $imagePath = request()->file('coverImage')->move('realestate_images','public');
                 $input['coverImage'] = $imagePath;
         }
 

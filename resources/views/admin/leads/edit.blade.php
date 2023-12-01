@@ -12,9 +12,23 @@
                     @csrf
                     @method('post')
                         <div class="mt-3">
-                            <label for="name" class="card-description">Name:  </label>
-                            <input type="text" name="name" value="{{$leadsCall-> name}}"  placeholder="Name ..." class="form-control" required>
-                    @error('name')
+                            <label for="name" class="card-description">First name:  </label>
+                            <input type="text" name="firstName" value="{{$leadsCall-> firstName }}"  placeholder="Name ..." class="form-control" required>
+                    @error('firstName')
+                        <div class="text-danger">{{$message}}</div>
+                    @enderror
+                        </div>
+                        <div class="mt-3">
+                            <label for="name" class="card-description">Middle Name:  </label>
+                            <input type="text" name="middleName" value="{{$leadsCall-> middleName}}"  placeholder="Name ..." class="form-control" required>
+                    @error('middleName')
+                        <div class="text-danger">{{$message}}</div>
+                    @enderror
+                        </div>
+                        <div class="mt-3">
+                            <label for="name" class="card-description">Last Name:  </label>
+                            <input type="text" name="lastName" value="{{$leadsCall-> lastName}}"  placeholder="Name ..." class="form-control" required>
+                    @error('lastName')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                         </div>
@@ -31,13 +45,6 @@
                     @error('phone')
                         <div class="text-danger">{{$message}}</div>
                     @enderror    
-                        </div>
-                        <div class="mt-3">
-                            <label for="address" class="card-description">Address:  </label>
-                            <input type="text" name="address" value="{{$leadsCall-> address}}"  placeholder="Address ..." class="form-control" required>
-                    @error('address')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
                         </div>
                         <div class="mt-3">
                         <!-- <a href="{ { rou te ('leads.update',$ leadsCal l-> id ) } }" class="text-light text-decoration-none">EDIT</a> -->

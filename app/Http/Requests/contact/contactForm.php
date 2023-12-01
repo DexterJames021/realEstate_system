@@ -25,7 +25,7 @@ class contactForm extends FormRequest
             "firstName" => 'required|string',
             "lastName" => 'required',
             "email" => 'required',
-            "mobileNo|numeric|digits_between:10,12" => 'required',
+            "message" => 'required|max:200',
         ];
     }
     public function messages(): array
@@ -35,9 +35,7 @@ class contactForm extends FormRequest
             "firstName" => 'Required',
             "lastName" => 'Required',
             "email" => 'Required',
-            "mobileNo" => 'Required',
-            "mobileNo.numeric" => 'Enter your number',
-            "mobileNo.digits_between" => 'it must 11 digits',
+            "message.max"=> "200 letters maximum"
         ];
     }
 }

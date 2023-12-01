@@ -1,30 +1,40 @@
-<h2 class="">Reservation</h2>
-<div class="">
+<h2>Schedule of Payment</h2>
+<small>
+    orem ipsum, dolor sit amet consectetur adipisicing elit. Minus nulla odit,
+     quae laborum quo velit tenetur eligendi molestias totam rerum est officia vero,
+      labore, iure tempore? Ratione tempora eaque aut!
+</small>    
+<!-- 
+net total contract price = 
 
+
+    spotcash = 
+
+
+ -->
+<div class="">
     <table border="1" width="100%" >
-        <thead class="">
+        <thead>
             <tr>
-                <th>id</th>
+                <th>Id</th>
+                <th>Blk & Lt / Phase / RA</th>
                 <th>Date</th>
                 <th>Condo prize </th>
-                <th>Monthly Income</th>
-                <th>Annual Payment</th>
                 <th>Payment Term</th>
                 <th>Monthly Payment </th>
             </tr>
         </thead>
         <tbody>
-        @foreach ($PassingData as $calling)
+        <!-- now()->addDays(30)->format('Y-m-d') -->
+
             <tr>
-                <td> {{ $calling->id }}</td>
-                <td> {{ now()->format('d/m/Y')  }}</td>
-                <td> {{ number_format($totalPrize) }}</td>
-                <td> {{ number_format( $calling->monthlyIncome )}}</td>
-                <td> {{ $calling->annualPayment }}</td>
-                <td> {{ $data = $calling->paymentTerm * 12 }} months</td>
-                <td> {{ number_format($totalPrize / (30 / $calling->annualPayment)) }}</td>
+                <td> {{ $PassingData->id }}</td>
+                <td> {{ $PassingData->propertyName }}</td>
+                <td> {{ $PassingData->created_at->format('Y-m-d')  }}</td>
+                <td> {{ number_format($PassingData->totalPrize) }}</td>
+                <td> {{ $PassingData->paymentTerm}}</td>
+                <td> computation </td>
             </tr>
-        @endforeach
         </tbody>
     </table>
 </div>
