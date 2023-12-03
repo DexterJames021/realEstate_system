@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\propertyTable;
 
 class Reservation extends Model
 {
@@ -22,8 +23,7 @@ class Reservation extends Model
         'poi_image',
         'paymentTerm'
     ];
-    public function property()
-    {
-        return $this->belongsTo(property::class);
+    public function property(){
+        return $this->hasMany(propertyTable::class,'reservations_id','id');
     }
 }

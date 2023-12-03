@@ -34,7 +34,7 @@ class addProperty extends FormRequest
         return [
             'coverImage' => 'Choose the Cover image',
             'coverImage.mimes' => 'It must be a jpeg or png file',
-            'residencialName' => 'The field is required.',
+            'propertyName' => 'The field is required.',
             'unitType' => 'Choose Unit type',
             'category' => 'Choose Category', 
             'totalPrize' => 'Required!',

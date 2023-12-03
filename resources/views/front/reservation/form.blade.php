@@ -143,7 +143,7 @@
                         <label class="form-label card-description" for="paymentTerm" >Payment Terms: </label>
                         <select name="paymentTerm" id="paymentTerm"  class="form-control">
                             <option selected disabled hidden> --- Select payment term ---</option>
-                            <option value="Spot DP 20%"               {{old('paymentTerm') == 'Spot DP 20%'? 'selected' : ''}}>              Spot DP 20%</option>
+                            <!-- <option value="Spot DP 20%"               {{old('paymentTerm') == 'Spot DP 20%'? 'selected' : ''}}>              Spot DP 20%</option> -->
                             <option value="DP 20% 6-Months"           {{old('paymentTerm') == 'DP 20% 6-Months'? 'selected' : ''}}>          DP 20% 6-Months</option>
                             <option value="Spot DP 10%-10% 6-Months"  {{old('paymentTerm') == 'Spot DP 10%-10% 6-Months'? 'selected' : ''}}> Spot DP 10%-10% 6-Months</option>
                             <option value="Spot DP 10%-10% 12-Months" {{old('paymentTerm') == 'Spot DP 10%-10% 12-Months'? 'selected' : ''}}> Spot DP 10%-10% 12-Months</option>

@@ -35,7 +35,7 @@
                   <span class="text-success">|</span>
                   <span >
                    <i class="mdi mdi-location text-dark"></i>
-                  {{$PropertyCall->residencialName}}</span>
+                  {{$PropertyCall->propertyName}}</span>
                   </span>
               </h4>
                 <ul>

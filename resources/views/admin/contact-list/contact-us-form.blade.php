@@ -14,7 +14,7 @@
                                 <th class="card-description">Last name</th>
                                 <th class="card-description">Email Address</th>
                                 <th class="card-description">Message</th>  
-                                <th class="card-description">Mail back</th>  
+                                <!-- <th class="card-description">Mail back</th>   -->
                             </tr>
                         </thead>
                         <tbody>
@@ -25,11 +25,11 @@
                                     <td>{{$ContactData->lastName}}</td>
                                     <td>{{$ContactData->email}}</td>
                                     <td>{{($ContactData->message)}}</td>
-                                    <td>
+                                    <!-- <td>
                                         <a href="">  
                                             <button class="btn btn-success text-light">Message</button>
                                         </a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             @endforeach    
                         </tbody>

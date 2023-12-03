@@ -18,9 +18,9 @@
                         @enderror
                         </div>
                         <div class="mb-3 mt-3">
-                            <label class="card-description " for="" >Residencial Name: </label>
-                            <input type="text" name="residencialName" value="{{$PropertyCall->residencialName}}" placeholder="Residencial Name ..." class="form-control">
-                        @error('residencialName')
+                            <label class="card-description " for="" >Property Name: </label>
+                            <input type="text" name="propertyName" value="{{$PropertyCall->propertyName}}" placeholder="Residencial Name ..." class="form-control">
+                        @error('propertyName')
                             <small><div class="text-danger">{{$message}}</div></small>
                         @enderror
                         </div>

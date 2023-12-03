@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
-            <h2 class="m-2">{{$PropertyData->residencialName}}</h2> <br>
+            <h2 class="m-2">{{$PropertyData->propertyName}}</h2> <br>
             <h6>| Properties Details</h6>
           </div>
         </div>
@@ -35,7 +35,7 @@
 
             <h4>{{$PropertyData->unitType}}
             <span class="text-success">|</span>
-            <span>{{$PropertyData->residencialName}}</span>
+            <span>{{$PropertyData->propertyName}}</span>
             </h4>
             <p>
             Enjoy the<strong class="" style="color:#000b8c;"> Amenities</strong> available in the {{$PropertyData->residencialName}},

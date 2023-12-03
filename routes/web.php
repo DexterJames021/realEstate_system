@@ -25,8 +25,8 @@ Route::group(["prefix"=> "/"], function () {
     Route::get('reservation/{id}',[ReservationController::class,'show'])->name('reservation.form');
     Route::post('reservation',[ReservationController::class,'create'])->name('reservation.add');
     Route::post('reservation-store',[ReservationController::class,'store'])->name('reservation.store');
-    Route::get('get-sop/{id}',[ReservationController::class,'getPDF'])->name('get.pdf');
-    Route::get('make-sop/{id}',[ReservationController::class,'makePDF'])->name('make.pdf');
+    // Route::get('get-sop/{id}',[ReservationController::class,'getPDF'])->name('get.pdf');
+    // Route::get('make-sop/{id}',[ReservationController::class,'makePDF'])->name('make.pdf');
 
 });
 

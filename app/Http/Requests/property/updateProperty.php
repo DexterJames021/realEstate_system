@@ -23,7 +23,7 @@ class updateProperty extends FormRequest
     {
         return [
             'coverImage' => 'required|image',
-            'residencialName' => 'required|string',
+            'propertyName' => 'required|string',
             'unitType' => 'required|in:1-Bedroom unit,2-Bedroom unit,3-Bedroom unit,Studio-type unit,Pent-house unit',
             'category' => 'required|in:Sold,Reserved,Available', 
             'totalPrize' => 'required|numeric|digits_between:6,11'
@@ -34,7 +34,7 @@ class updateProperty extends FormRequest
         return [
             'coverImage' => 'Choose the Cover image',
             'coverImage.mimes' => 'It must be a jpeg or png file',
-            'residencialName' => 'The field is required.',
+            'propertyName' => 'The field is required.',
             'unitType' => 'Choose Unit type',
             'category' => 'Choose Category', 
             'totalPrize' => 'Required!',

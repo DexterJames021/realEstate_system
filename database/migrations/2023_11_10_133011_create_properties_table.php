@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            // $table->integer('property_id')->default(0);
+            $table->integer('property_id')->default(0);
             $table->string('coverImage'); //sierra vallley 
             $table->string('propertyName'); //sierra vallley 
             $table->string('unitType'); // 1br, 2br ,studio

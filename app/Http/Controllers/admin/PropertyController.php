@@ -7,6 +7,8 @@ use Illuminate\Http\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\property\addProperty;
 use App\Http\Requests\property\updateProperty;
+use App\Models\propertyTable;
+use App\Models\Reservation;
 
 class PropertyController extends Controller
 {
@@ -15,7 +17,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $propertyData = property::get();
+        $propertyData = property::orderBy('id','DESC')->get();
+
         return view("admin.properties-crud.property-list")->with("propertyData", $propertyData);
     }
 
@@ -79,7 +82,6 @@ class PropertyController extends Controller
 
         $data->Update($input);
         return redirect('admin/property-list')->with('message', 'Property Updated!'); 
-
     }
 
     /**
